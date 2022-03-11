@@ -1,0 +1,35 @@
+<%- include('header') %> <%- include('navbar') %>
+<html>
+  <body>
+    <div class="row ms-3">
+      <h2 class="row">Create account</h2>
+      <form action="/register" method="POST">
+        <h5 class="row mt-4">Username</h5>
+        <input class="row mb-2" type="text" name="username" minlength="8" required />
+        <h5 class="row">Password</h5>
+        <input
+          class="row mb-2"
+          type="password"
+          name="password1"
+          minlength="6"
+          required
+        />
+        <h5 class="row">Confirm password</h5>
+        <input
+          class="row mb-2"
+          type="password"
+          name="password2"
+          minlength="6"
+          required
+        />
+        <input class="row mt-2" type="submit" value="Submit" />
+      </form>
+      <% if(typeof response === 'undefined'){ %>
+       <% console.log('respone not stated') %>
+       <% } else{ %>
+       <h5 class="row text-danger"><%=response%></h2>
+      <% }; %>
+    </div>
+  </body>
+</html>
+<%- include ('footer') %>

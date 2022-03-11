@@ -1,0 +1,42 @@
+<%- include('header') %> <%- include('navbar') %>
+<html>
+  <body>
+    <h1>Latest song!</h1>
+    <% songs.forEach((a, index) => {%>
+    <div class="row border mt-3">
+      <img
+        src="/images/<%=a.img%>.png"
+        class="img-thumbnail col-3 me-3"
+        alt="..."
+      />
+      <div class="col mt-3">
+        <div class="row fw-bold fs-3">
+          <a href="/music/<%=a.id%>"><%=a.title%></a>
+        </div>
+        <div class="row">
+          <div class="col-1 mt-2">Artist:</div>
+          <div class="col mt-2">
+            <a href="/artist/<%=a.img%>"><%=a.name%></a>
+          </div>
+        </div>
+        <div class="row text-start">
+          <div class="col">Duration: <%=a.duration%></div>
+        </div>
+        <div class="row">
+          <div class="col-2">uploaded by:</div>
+          <div class="col">
+            <a href="/user/<%=a.username%>"><%=a.username%></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <a class="col mt-3" href="<%= a.link %>" target="_blank"
+            >YouTube link</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </body>
+</html>
+<%- include ('footer') %>

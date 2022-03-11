@@ -1,0 +1,63 @@
+<%- include('header') %> <%- include('navbar') %>
+
+<div class="container entry-form">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-10">
+      <form
+        class="entry-form-container"
+        action="/edit/<%=songToEdit[0].id%>"
+        method="POST"
+      >
+        <div class="row">
+          <h2>Favourvite Song Entry</h2>
+          <p class="mb-5">Tell us what's on your repeat</p>
+          <div class="col">
+            <div class="form-group">
+              <label for="title">Song title: </label>
+              <input
+                class="form-control"
+                name="title"
+                id="title"
+                value="<%=songToEdit[0].title%>"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="duration">Duration: </label>
+              <input
+                class="form-control"
+                type="text"
+                name="duration"
+                id="duration"
+                value="<%=songToEdit[0].duration%>"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="form-group">
+            <label for="link">Youtube Link: </label>
+            <input
+              class="form-control"
+              type="link"
+              name="link"
+              id="link"
+              value="<%=songToEdit[0].link%>"
+              required
+            />
+          </div>
+        </div>
+        <br /><br />
+
+        <button type="submit" class="btn btn-secondary btn-block">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ('footer') %>
